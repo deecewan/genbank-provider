@@ -28,7 +28,7 @@ open SourceLink
 
 // The name of the project
 // (used by attributes in AssemblyInfo, name of a NuGet package and directory in 'src')
-let project = "Experimental-dotnetbioGenBankProvider"
+let project = "GenBankProvider"
 
 // Short summary of the project
 // (used as description in AssemblyInfo and as a short summary for NuGet package)
@@ -39,13 +39,13 @@ let summary = "A type provider for GenBank data with the use of .NET Bio types"
 let description = "This project is an experimental type provider for GenBank data which makes use of the existing .NET Bio library."
 
 // List of author names (for NuGet package)
-let authors = [ "Jessica Davis" ]
+let authors = [ "Jessica Davis"; "David Buchan-Swanson" ]
 
 // Tags for your project (for NuGet package)
 let tags = "type provider, dotnetbio, GenBank, bioinformatics, fsharp"
 
 // File system information
-let solutionFile  = "Experimental-dotnetbioGenBankProvider.sln"
+let solutionFile  = "GenBankProvider.sln"
 
 // Default target configuration
 let configuration = "Release"
@@ -55,11 +55,11 @@ let testAssemblies = "tests/**/bin" </> configuration </> "*Tests*.dll"
 
 // Git configuration (used for publishing documentation in gh-pages branch)
 // The profile where the project is posted
-let gitOwner = "jessicagrace17"
-let gitHome = sprintf "%s/%s" "https://github.com/jessicagrace17/Experimental-dotnetbioGenBankProvider" gitOwner
+let gitOwner = "deecewan"
+let gitHome = sprintf "%s/%s" "https://github.com/deecewan/genbank-provider" gitOwner
 
 // The name of the project on GitHub
-let gitName = "Experimental-dotnetbioGenBankProvider"
+let gitName = "genbank-provider"
 
 // The url for the raw files hosted
 let gitRaw = environVarOrDefault "gitRaw" "https://raw.githubusercontent.com/jessicagrace17"
@@ -122,7 +122,7 @@ Target "CopyBinaries" (fun _ ->
 // --------------------------------------------------------------------------------------
 // Clean build results
 
-let vsProjProps = 
+let vsProjProps =
 #if MONO
     [ ("DefineConstants","MONO"); ("Configuration", configuration) ]
 #else

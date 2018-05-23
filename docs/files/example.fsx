@@ -1,9 +1,9 @@
-#I "../../bin/Experimental-dotnetbioGenBankProvider"
+#I "../../bin/GenBankProvider"
 
 #r "Bio.Core.dll"
-#r "Experimental-dotnetbioGenBankProvider.dll"
+#r "GenBankProvider.dll"
 
-type ``NC_012686-Chlamydia trachomatis`` = Bio.FSharp.Experimental.GenBankProvider< @"NC_012686-Chlamydia trachomatis.gbk" >
+type ``NC_012686-Chlamydia trachomatis`` = Bio.FSharp.GenBankProvider< @"NC_012686-Chlamydia trachomatis.gbk" >
 
 ``NC_012686-Chlamydia trachomatis``.``.NET Bio Objects``.GenBankMetaData
 

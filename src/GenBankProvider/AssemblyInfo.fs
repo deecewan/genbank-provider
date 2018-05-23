@@ -2,8 +2,8 @@
 namespace System
 open System.Reflection
 
-[<assembly: AssemblyTitleAttribute("Experimental-dotnetbioGenBankProvider")>]
-[<assembly: AssemblyProductAttribute("Experimental-dotnetbioGenBankProvider")>]
+[<assembly: AssemblyTitleAttribute("GenBankProvider")>]
+[<assembly: AssemblyProductAttribute("GenBankProvider")>]
 [<assembly: AssemblyDescriptionAttribute("A type provider for GenBank data with the use of .NET Bio types")>]
 [<assembly: AssemblyVersionAttribute("1.0")>]
 [<assembly: AssemblyFileVersionAttribute("1.0")>]
@@ -11,8 +11,8 @@ open System.Reflection
 do ()
 
 module internal AssemblyVersionInformation =
-    let [<Literal>] AssemblyTitle = "Experimental-dotnetbioGenBankProvider"
-    let [<Literal>] AssemblyProduct = "Experimental-dotnetbioGenBankProvider"
+    let [<Literal>] AssemblyTitle = "GenBankProvider"
+    let [<Literal>] AssemblyProduct = "GenBankProvider"
     let [<Literal>] AssemblyDescription = "A type provider for GenBank data with the use of .NET Bio types"
     let [<Literal>] AssemblyVersion = "1.0"
     let [<Literal>] AssemblyFileVersion = "1.0"

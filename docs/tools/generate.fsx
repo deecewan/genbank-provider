@@ -6,22 +6,22 @@
 // Binaries that have XML documentation (in a corresponding generated XML file)
 // Any binary output / copied to bin/projectName/projectName.dll will
 // automatically be added as a binary to generate API docs for.
-// for binaries output to root bin folder please add the filename only to the 
+// for binaries output to root bin folder please add the filename only to the
 // referenceBinaries list below in order to generate documentation for the binaries.
 // (This is the original behaviour of ProjectScaffold prior to multi project support)
 let referenceBinaries = []
 // Web site location for the generated documentation
-let website = "/Experimental-dotnetbioGenBankProvider"
+let website = "/GenBankProvider"
 
-let githubLink = "https://github.com/jessicagrace17/Experimental-dotnetbioGenBankProvider/jessicagrace17/Experimental-dotnetbioGenBankProvider"
+let githubLink = "https://github.com/deecewan/genbank-provider"
 
 // Specify more information about your project
 let info =
-  [ "project-name", "Experimental-dotnetbioGenBankProvider"
-    "project-author", "Jessica Davis"
+  [ "project-name", "GenBankProvider"
+    "project-author", "David Buchan-Swanson"
     "project-summary", "A type provider for GenBank data with the use of .NET Bio types"
     "project-github", githubLink
-    "project-nuget", "http://nuget.org/packages/Experimental-dotnetbioGenBankProvider" ]
+    "project-nuget", "http://nuget.org/packages/GenBankProvider" ]
 
 // --------------------------------------------------------------------------------------
 // For typical project, no changes are needed below
@@ -70,16 +70,16 @@ subDirectories (directoryInfo templates)
 let copyFiles () =
   CopyRecursive files output true |> Log "Copying file: "
   ensureDirectory (output @@ "content")
-  CopyRecursive (formatting @@ "styles") (output @@ "content") true 
+  CopyRecursive (formatting @@ "styles") (output @@ "content") true
     |> Log "Copying styles and scripts: "
 
 let binaries =
-    let manuallyAdded = 
-        referenceBinaries 
+    let manuallyAdded =
+        referenceBinaries
         |> List.map (fun b -> bin @@ b)
-    
-    let conventionBased = 
-        directoryInfo bin 
+
+    let conventionBased =
+        directoryInfo bin
         |> subDirectories
         |> Array.map (fun d -> d.FullName @@ (sprintf "%s.dll" d.Name))
         |> List.ofArray
@@ -88,7 +88,7 @@ let binaries =
 
 let libDirs =
     let conventionBasedbinDirs =
-        directoryInfo bin 
+        directoryInfo bin
         |> subDirectories
         |> Array.map (fun d -> d.FullName)
         |> List.ofArray
